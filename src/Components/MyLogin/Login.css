@@ -1,0 +1,217 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+
+
+body.login-background {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  margin: 0;
+  background-image: url("https://wkitty.tw/wp-content/uploads/2019/07/1562823936-2f768ebbc38a2e3075c66c4919967503-1024x607.jpg");
+  background-position: fixed;
+  background-size: cover;
+}
+
+
+
+.the-whole-login-part {
+  width: 500px; /* Adjusted width */
+  height: 630px;
+  background: white; /* Adjusted background color with opacity */
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px 1px rgba(0, 0, 0, 0.241);
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background-size: 100% 100%;
+}
+ 
+
+.log-in-title {
+  height: 100px;  
+  background: #808080;
+  border-radius: 10px 10px 0 0;
+  color: white;
+  font-size: 38px; /* Adjusted font size */
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.computerPlease{
+  height: 20px; /* Adjusted height */
+  background: #808080;
+  color: white;
+  font-size: 10px; /* Adjusted font size */
+  font-weight: 300;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+
+.the-login-form {
+  padding: 20px 30px 30px 30px;  
+}
+
+.signInText {
+  color: grey;  
+  font-size: 60px;  
+  text-align: center;  
+  margin: 0 auto 30px auto;  
+}
+
+
+
+.login-username-input input{
+  height: 55px;
+  width: 100%;
+  outline: none;
+  padding-left: 20px;
+  border-radius: 8px;
+  border: 2px solid lightgrey; /* Adjusted border thickness */
+  font-size: 20px;
+  transition: all 0.3s ease;
+  margin-bottom: 30px;
+}
+
+
+.login-username-input:focus {
+  border-color: #808080;
+  box-shadow: inset 0px 0px 2px 2px rgba(128, 128, 128, 0.25);
+}
+
+
+.login-username-input::placeholder {
+  color: #999;
+}
+
+.login-password-input input{
+  height: 55px;
+  width: 100%;
+  outline: none;
+  padding-left: 20px;
+  border-radius: 8px;
+  border: 2px solid lightgrey; /* Adjusted border thickness */
+  font-size: 20px;
+  transition: all 0.3s ease;
+  margin-bottom: 10px;
+}
+
+
+.login-password-input:focus {
+  border-color: #808080;
+  box-shadow: inset 0px 0px 2px 2px rgba(128, 128, 128, 0.25);
+}
+
+
+.login-password-input::placeholder {
+  color: #999;
+}
+
+
+
+.forget-password {
+  margin-bottom: 30px;
+}
+
+.forget-password a {
+  color: #007cdc;
+  font-size: 18px; /* Adjusted font size */
+  text-decoration: none;
+}
+
+.forget-password a:hover {
+  text-decoration: underline;
+}
+
+ 
+
+.log-in-button button{
+  color: #fff;
+  font-size: 24px;  
+  background: #808080;
+  border: 1px solid #808080;
+  cursor: pointer;
+  border-radius: 8px;  
+  text-align: center;
+  width: 100%;
+  height: 65px;
+}
+
+.log-in-button :hover {
+  background: #686868;
+}
+
+.ask-to-signup-link {
+  color: #808080;
+  text-align: center;
+  margin-top: 30px;  
+  font-size: 20px;  
+  width: 100%;  
+  display: block; /* Set the display to block */
+}
+
+.ask-to-signup-link a {
+  color: #007cdc; /* Darker shade of blue */
+  text-decoration: underline; /* Add an underline to indicate a link */
+}
+
+
+.ask-to-signup-link a:hover {
+  text-decoration: underline;
+  color: #0f5488;
+  
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.loading-spinner {
+  display: inline-block;
+  border: 10px solid rgba(0, 0, 0, 0.1);
+  border-left: 10px solid #454545;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  animation: rotate 1s linear infinite;
+
+}
+
+.forgot-message-being-clicked {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 80%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(0, 0, 0, 0.6);
+  color: white;
+  padding: 20px;
+  border-radius: 5px;
+  z-index: 9999;
+  text-align: center;
+}
+
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 9998;
+}
+
+.error-message{
+  color: white;
+}
