@@ -10,6 +10,7 @@ import {useNavigate } from 'react-router-dom';
 import Checkout from './Components/MyCheckOut/Checkout';
 import PurchaseDone from './Components/MyPurchaseDone/PurchaseDone';
 import History from './Components/MyHistory/History';
+import Product from './Components/MyProduct/Product';
 
 
 function App() {
@@ -75,6 +76,7 @@ function App() {
                 <Route path = "/Checkout" element={<Checkout/>} /> 
                 <Route path = "/PurchaseDone" element={<PurchaseDone/>} /> 
                 <Route path = "/History" element={<History/>} /> 
+                <Route path = "/Product/:item" element={<Product/>}/>
               </>
 
             ):(

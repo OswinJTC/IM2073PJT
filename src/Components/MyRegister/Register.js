@@ -13,26 +13,37 @@ const Register = ({setIsLoggedIn, setLoggedUserName}) => {
   const navigate = useNavigate();
 
 
-  const handleRegister = async () =>{
-    try{
-
-        const response = await api.post("/userApi/userRegistration", {
-            name: name,
-            email: email,
-            password: password
-        })
-
-        if(response.status === 201){
-            console.log('Registration successful!');
-            navigate("/");
-        }else{
-            console.error('註冊失敗', response);
-        }
-
-    }catch(error){
-        console.error('註冊失敗', error);
+  const handleRegister = async () => {
+    // Email validation regex pattern
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  
+    // Check if the email is in a valid format
+    if (!emailPattern.test(email)) {
+      console.error('Invalid email address');
+      return; // Exit the function if email is invalid
+    }
+  
+    try {
+      const response = await api.post("/userApi/userRegistration", {
+        name: name,
+        email: email,
+        password: password
+      });
+  
+      if (response.status === 201) {
+        console.log('Registration successful!');
+        navigate("/");
+      } else {
+        console.error('註冊失敗', response);
+      }
+  
+    } catch (error) {
+      console.error('註冊失敗', error);
     }
   }
+  
+
+
   return (
     <div className='align-items-center'>
 
@@ -62,8 +73,9 @@ const Register = ({setIsLoggedIn, setLoggedUserName}) => {
 
                 <div className='register-input-row'>
                     <div className='register-email-input'>
+                        
                         <input
-                            type="text"
+                            type="email"
                             placeholder="請輸入電子郵件"
                             value={email}
                             onChange={(e) => setEmail(e.target.value)}

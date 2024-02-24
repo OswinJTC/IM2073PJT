@@ -5,8 +5,10 @@ import api from '../../api/axiosConfig';
 
 const Home = ({handleLogout}) => {
 
+
   const [products, setProducts] = useState([]);
   const [localStorageData, setLocalStorageData] = useState([]);
+
 
   useEffect(()=>{
 
@@ -93,6 +95,15 @@ const Home = ({handleLogout}) => {
         {products.map(product => (
           <div key={product.id} className='merch-item col'>
               <div>{product?.item}</div>
+
+              <div className='pt-3'></div>
+
+              <div> 
+                  <Link to={`/Product/${product?.item}`}>產品資訊</Link>
+              </div>
+
+              <div className='pt-4'></div>
+              
 
               <div className='quatity-controller'>
                 <button onClick={() => handleDecrement(product?.id)}>-</button>
