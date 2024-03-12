@@ -34,13 +34,19 @@ const Login = ({setIsLoggedIn, setLoggedUserName}) => {
     }
   }
   return (
-    <div className='align-items-center'>
+    <div className='align-items-center' style={{ 
+        backgroundImage: `url('https://static.vecteezy.com/system/resources/previews/024/234/837/original/cool-blue-purple-vibrant-gradient-background-water-color-overlay-neon-design-element-dreamy-unfocussed-holograph-luxury-texture-fluid-lights-minimal-digital-gradient-free-vector.jpg')`, 
+        backgroundSize: 'cover', 
+        height: '100vh',
+        weight: '100wh',
+        padding: '20px'
+      }}>
 
         <div className='pt-5'></div>
         <div className='pt-5'></div>
 
         <div className='login-title d-flex justify-content-center align-items-center'>
-             <span>IM2073 WEB PROGRAMMING</span>
+             <span>IM2073 Web Programming</span>
         </div>
 
         <div className='the-login-form'>

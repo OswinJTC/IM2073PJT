@@ -66,7 +66,13 @@ const Product = () => {
   };
 
   return (
-    <div>
+    <div style={{ 
+      backgroundImage: `url('https://www.corso-saunamanufaktur.com/wp-content/uploads/2022/08/Sauna-Bauhausstil-Staebchenoptik-5-1.jpg')`,
+      backgroundSize: 'cover', 
+      height: '100vh',
+      weight: '100wh',
+      padding: '20px'
+    }}>
 
     
       <div className="pt-3 backHome">

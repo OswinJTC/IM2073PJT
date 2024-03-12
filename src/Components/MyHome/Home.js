@@ -79,13 +79,17 @@ const Home = ({handleLogout}) => {
 
 
   return (
-    <div>
+    <div style={{ 
+      backgroundImage: `url('https://img.freepik.com/free-photo/vivid-blurred-colorful-wallpaper-background_58702-2458.jpg')`, 
+      backgroundSize: 'cover',
+      padding: '20px'
+    }}>
 
         <div className='pt-5'></div>
         <div className='pt-5'></div>
 
         <div>
-            <p><strong>"Start shopping"</strong></p>
+            <p><strong>The Ultimate Saunas</strong></p>
         </div>
 
             
@@ -94,14 +98,17 @@ const Home = ({handleLogout}) => {
         <div className='merch-row row'>
         {products.map(product => (
           <div key={product.id} className='merch-item col'>
+              
               <div>{product?.item}</div>
+
+              <img src={product.imagePath} alt={product.description} />
 
               <div className='pt-3'></div>
 
               <div> 
                   <Link to={`/Product/${product?.item}`}>產品資訊</Link>
               </div>
-
+              
               <div className='pt-4'></div>
               
 
@@ -110,6 +117,7 @@ const Home = ({handleLogout}) => {
                 <input type='text' value={isNaN(product.quantity) ? '' : product.quantity} onChange={(e) => handleManualKeyIn(e, product.id)}/>
                 <button onClick={() => handleIncrement(product?.id)}>+</button>
               </div>
+              <div className='pt-5'></div>
           </div>
         ))}
         </div>
