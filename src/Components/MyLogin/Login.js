@@ -25,12 +25,12 @@ const Login = ({setIsLoggedIn, setLoggedUserName}) => {
             setLoggedUserName(name);
             navigate("/");
         }else{
-            console.error('登入失敗', response);
+            console.error('Failed to Login', response);
 
         }
 
     }catch(error){
-        console.error('登入失敗', error);
+        console.error('Failed to Login', error);
     }
   }
   return (
@@ -45,8 +45,8 @@ const Login = ({setIsLoggedIn, setLoggedUserName}) => {
         <div className='pt-5'></div>
         <div className='pt-5'></div>
 
-        <div className='login-title d-flex justify-content-center align-items-center'>
-             <span>IM2073 Web Programming</span>
+        <div className='login-title d-flex justify-content-center align-items-center'style={{ fontSize: '36px' }}>
+             <span style={{ fontFamily: 'Times New Roman' }}>The Ultimate Saunas Shop</span>
         </div>
 
         <div className='the-login-form'>
@@ -58,7 +58,7 @@ const Login = ({setIsLoggedIn, setLoggedUserName}) => {
                     <div className='login-username-input'>
                         <input
                             type="text"
-                            placeholder="請輸入用戶名稱"
+                            placeholder="Please enter your username"
                             value={name}
                             onChange={(e) => setName(e.target.value)}
                             required
@@ -70,27 +70,36 @@ const Login = ({setIsLoggedIn, setLoggedUserName}) => {
                     <div className='login-password-input'>
                         <input
                             type="password"
-                            placeholder="請輸入密碼"
+                            placeholder="Please enter your password"
                             value={password}
                             onChange={(e) => setPassword(e.target.value)}
                             required
                         />
                     </div>
                 </div>
-
+                <div className='pt-5'></div>
                 <div className="log-in-button">
-                    <button type="button" onClick={handleLogin}>馬上登入</button>
+                    <button type="button" onClick={handleLogin}>Login</button>
                 </div>
 
                 <div className="ask-to-signup-link">
-                    還沒有帳號? <Link to="/Register">點我註冊</Link>
+                    Not Registered Yet? <Link to="/Register">Click Here to Register</Link>
                 </div>
 
             </form>
 
         </div>
 
-
+        <footer style={{ 
+        position: 'fixed',
+        bottom: '0',
+        right: '0',
+        textAlign: 'right', 
+        marginTop: '20px', 
+        color: '#fff' 
+        }}>
+        IM2073 Web Programming
+        </footer>
     </div>
     
   )

@@ -5,8 +5,10 @@ import api from '../../api/axiosConfig';
 import './Product.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-const Product = () => {
 
+
+const Product = () => {
+  
   const [reviewText, setReviewText] = useState('');
   const [allReviews, setAllReviews] = useState([]);
   const productName = useParams().item;
@@ -24,7 +26,7 @@ const Product = () => {
       setAllReviews(response.data);
 
     } catch (error) {
-      console.error("評論讀去失敗", error);
+      console.error("Fail to read Review", error);
     }
 
   }
@@ -56,10 +58,10 @@ const Product = () => {
       getAllReviews();
       setReviewText("");
 
-      console.log('留言發送成功！！！');
+      console.log("You've successfully added a review!");
 
     } catch (error) {
-      console.error('留言發送失敗...', error);
+      console.error('Failed to upload a review...', error);
 
     }
 
@@ -67,7 +69,7 @@ const Product = () => {
 
   return (
     <div style={{ 
-      backgroundImage: `url('https://www.corso-saunamanufaktur.com/wp-content/uploads/2022/08/Sauna-Bauhausstil-Staebchenoptik-5-1.jpg')`,
+      backgroundImage: `url('https://bsaunas.com/wp-content/uploads/2023/03/Thermory_Sauna_wall_KYTE_15x87_thermo-aspen_3.jpg')`,
       backgroundSize: 'cover', 
       height: '100vh',
       weight: '100wh',
@@ -76,14 +78,14 @@ const Product = () => {
 
     
       <div className="pt-3 backHome">
-          <button type="button" onClick={goBackHome}>回首頁</button>
+          <button type="button" onClick={goBackHome}>Back to Home</button>
       </div>
 
       <div className='pt-5'></div>
       <div className='pt-5'></div>
 
-      <div>
-        <p><strong>"{productName}"</strong></p>
+      <div style={{ fontSize: '36px' }}>
+        <p><strong>{productName}</strong></p>
       </div>
 
       
@@ -92,8 +94,8 @@ const Product = () => {
       <div className='pt-5'></div>
 
       <div className='Reciept'>
-        [         .============ ===<br></br>
-        =======<br></br>
+        [======== ==<br></br>
+        ========= ==<br></br>
         ========= ==<br></br>
         ========= ==]<br></br><br></br><br></br>
 
@@ -123,7 +125,7 @@ const Product = () => {
                 <div className="col-md-10">
                   <div className='review-row'>
                     <h3 style={{ fontWeight: 'bold', marginRight: '10px', display: 'inline' }}>{r?.author}</h3>
-                    <h6 style={{ fontSize: 'smaller', marginRight: '10px', display: 'inline', color: 'gray' }}>{r?.created}</h6>
+                    <h6 style={{ fontSize: 'smaller', marginRight: '10px', display: 'inline', color: 'rgb(45, 45, 45)' }}>{r?.created}</h6>
                     <h4 style={{ display: 'inline' }}>{r?.body}</h4>
                   </div>
                 </div>
@@ -138,7 +140,16 @@ const Product = () => {
           ))
         )}
       </div>
-
+      <footer style={{ 
+        position: 'fixed',
+        bottom: '0',
+        right: '0',
+        textAlign: 'right', 
+        marginTop: '20px', 
+        color: '#fff' 
+        }}>
+        IM2073 Web Programming
+        </footer>
     </div>
   )
 }

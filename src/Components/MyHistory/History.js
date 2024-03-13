@@ -54,14 +54,20 @@ const History = () => {
 
    
   return (
-    <div>
+    <div style={{ 
+      backgroundImage: `url('https://static.vecteezy.com/system/resources/previews/011/835/071/original/sales-printed-blank-receipt-png.png')`,
+      backgroundSize: 'cover', 
+      height: '100vh',
+      weight: '100wh',
+      padding: '20px'
+    }}>
         <div className='pt-5'></div>
         <div className='pt-5'></div>
 
-        <div>
-            <p><strong>"Checkout"</strong></p>
+        <div style={{ fontSize: '30px' }}>
+            <p><strong>"History"</strong></p>
         </div>
-
+        <div className='pt-5'></div>
         <div>
 
             <div className='Reciept'>
@@ -97,9 +103,18 @@ const History = () => {
         <div className='pt-5'></div>
 
         <div className='to-Home'>
-            <Link to = "/" >回首頁</Link>
+            <Link to = "/" >Back to Home</Link>
         </div>
-        
+        <footer style={{ 
+        position: 'fixed',
+        bottom: '0',
+        right: '0',
+        textAlign: 'right', 
+        marginTop: '20px', 
+        color: 'gray' 
+        }}>
+        IM2073 Web Programming
+        </footer>
     </div>
 
     

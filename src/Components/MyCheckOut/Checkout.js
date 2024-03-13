@@ -40,7 +40,7 @@ const Checkout = () => {
         })
 
     }catch(error){
-        console.error('資料傳送失敗', error);
+        console.error('Failed to send data', error);
     }
   }
 
@@ -49,12 +49,18 @@ const Checkout = () => {
  
 
   return (
-    <div>
+    <div style={{ 
+      backgroundImage: `url('https://images.unsplash.com/photo-1605184861755-8f190fea96a5?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8cGluayUyMGdyYWRpZW50fGVufDB8fDB8fHww')`,
+      backgroundSize: 'cover', 
+      height: '100vh',
+      weight: '100wh',
+      padding: '20px'
+    }}>
         <div className='pt-5'></div>
         <div className='pt-5'></div>
 
-        <div>
-            <p><strong>"Cart"</strong></p>
+        <div className='login-title d-flex justify-content-center align-items-center'style={{ fontSize: '36px' }}>
+             Cart
         </div>
 
         <div className='pt-5'></div>
@@ -86,9 +92,18 @@ const Checkout = () => {
         <div className='pt-5'></div>
 
         <div className='to-PurchaseDone'>
-            <Link to = "/PurchaseDone" onClick={handlePassPurchase}>確認購買</Link>
+            <Link to = "/PurchaseDone" onClick={handlePassPurchase}>Confirm Payment</Link>
         </div>
-        
+        <footer style={{ 
+        position: 'fixed',
+        bottom: '0',
+        right: '0',
+        textAlign: 'right', 
+        marginTop: '20px', 
+        color: '#fff' 
+        }}>
+        IM2073 Web Programming
+        </footer>
     </div>
 
     

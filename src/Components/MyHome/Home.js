@@ -88,8 +88,8 @@ const Home = ({handleLogout}) => {
         <div className='pt-5'></div>
         <div className='pt-5'></div>
 
-        <div>
-            <p><strong>The Ultimate Saunas</strong></p>
+        <div className='login-title d-flex justify-content-center align-items-center'style={{ fontSize: '42px' }}>
+             <span style={{ fontFamily: 'Times New Roman' }}>The Ultimate Saunas</span>
         </div>
 
             
@@ -99,14 +99,17 @@ const Home = ({handleLogout}) => {
         {products.map(product => (
           <div key={product.id} className='merch-item col'>
               
-              <div>{product?.item}</div>
+              <div style={{ fontSize: '24px'}}>{product?.item}</div>
 
               <img src={product.imagePath} alt={product.description} />
 
               <div className='pt-3'></div>
 
+              <div>{product?.description}</div>
+
+              <div className='pt-3'></div>
               <div> 
-                  <Link to={`/Product/${product?.item}`}>產品資訊</Link>
+                  <Link to={`/Product/${product?.item}`}>Product Information</Link>
               </div>
               
               <div className='pt-4'></div>
@@ -129,21 +132,30 @@ const Home = ({handleLogout}) => {
         
 
         <div className='to-check-out'>
-            <Link to = "/checkout">前往結帳</Link>
+            <Link to = "/checkout">Checkout</Link>
         </div>
 
         <div className='pt-5'></div>
 
-        <button type="button" onClick={handleLogoutHome}>馬上登出</button>
+        <button type="button" onClick={handleLogoutHome}>Logout</button>
 
         <div className='pt-5'></div>
         <div className='pt-5'></div>
         <div className='pt-5'></div>
 
         <div className='to-history'>
-            <Link to = "/History">歷史紀錄</Link>
+            <Link to = "/History">History</Link>
         </div>
-        
+        <footer style={{ 
+        position: 'fixed',
+        bottom: '0',
+        right: '0',
+        textAlign: 'right', 
+        marginTop: '20px', 
+        color: '#fff' 
+        }}>
+        IM2073 Web Programming
+        </footer>
     </div>
     
   )
